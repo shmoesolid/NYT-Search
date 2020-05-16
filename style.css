@@ -1,0 +1,30 @@
+* {
+    font-family: Helvetica
+}
+h1 {
+    color: white;
+    text-align: center;
+    font-size: 80px;
+}
+.jumbotron {
+    background-color: rgb(32, 49, 90);
+}
+.panel-heading {
+    background-color: rgb(44, 62, 80);
+    color: white;
+    font-family: “lato”;
+    font-size: 15px;
+}
+.panel {
+    border-color: rgb(44, 62, 80);
+    border: 1px;
+    border-style: solid;
+    padding-bottom: 20px;
+}
+p {
+    font-weight: bold;
+    font-size: 15px;
+}
+#articleDiv {
+    padding-top: 40px;
+}

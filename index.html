@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> NYT Searcher </title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <link
+        rel="stylesheet"
+        href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+        crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+      <div class="container">
+        <div class="jumbotron">
+            <h1><i class="far fa-newspaper"></i> New York Times Search</h1>
+        </div>
+        <div class="panel">
+            <div class="panel-heading p-2">
+                <h3 class="panel-title"><i class="fas fa-server"></i> Search Parameters</h3>
+            </div>
+        <div class="panel-body p-2">
+            <p>Search Term</p>
+            <input type="text" class="w-100" id="search-term">
+            <p>Number of Records to retrieve</p>
+            <select id="numberOfRecords" class="w-100">
+                <option value="1">1</option>
+                <option value="5">5</option>
+                <option value="10">10</option>
+            </select>
+            <p>Start Year:</p>
+            <input type="text" class="w-100" id="start-year" >
+            <p>End Year:</p>
+            <input type="text" class="w-100" id="end-year">
+            <button id="search">Search</button>
+            <button id="clear">Clear</button>
+        </div>
+        </div>
+        <div class="panel" id="articleDiv">
+            <div class="panel-heading p-2">
+                <h3><i class="far fa-calendar-alt"></i>Top Articles</h3>
+            </div>
+            <div class="panel-body p-2" id="articles"></div>
+        </div>
+      </div>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="func.js"></script>
+    <script>
+           $("#search").on("click", function() {
+                var searchTerm = $("#search-term").val();
+                var numberOfRecords = $("#numberOfRecords").val();
+                var startYear = $("#start-year").val()
+                var endYear = $("#end-year").val();
+
+                $("#articles").empty();
+                query($("#articles"), searchTerm, numberOfRecords, startYear, endYear);
+           });
+      </script>
+    </body>
+</html>
