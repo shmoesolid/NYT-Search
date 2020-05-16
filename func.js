@@ -60,7 +60,9 @@ function query(resultsElm, query, numRecords=5, beginYear=null, endYear=null)
             container.append(summary);
 
             // multimedia
-            if (docs[i].hasOwnProperty('multimedia')) 
+            if (docs[i].hasOwnProperty('multimedia') 
+                && docs[i].multimedia.length > 0
+                && docs[i].multimedia[0].hasOwnProperty('url')) 
             {
                 var imgUrl = mainURL + docs[i].multimedia[0].url;
                 var imgElm = $('<img>');
