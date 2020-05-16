@@ -30,7 +30,7 @@ function query(resultsElm, query, numRecords=5, beginYear=null, endYear=null)
 
         // assign for readability
         var docs = res.response.docs;
-        console.log(res);
+        //console.log(res);
 
         var mainURL = "https://nytimes.com/";
         
@@ -62,8 +62,8 @@ function query(resultsElm, query, numRecords=5, beginYear=null, endYear=null)
             // multimedia
             if (docs[i].hasOwnProperty('multimedia') 
                 && docs[i].multimedia.length > 0
-                && docs[i].multimedia[0].hasOwnProperty('url')) 
-            {
+                && docs[i].multimedia[0].hasOwnProperty('url')
+            ) {
                 var imgUrl = mainURL + docs[i].multimedia[0].url;
                 var imgElm = $('<img>');
                 imgElm.attr("src", imgUrl );
